@@ -1,0 +1,244 @@
+<!--pages/seevisit/seevisit.wxml-->
+<view class='Mask delvideo' wx:if='{{play==2}}'>
+  <view bindtap='end' class='end'>X</view>
+  <video src="{{video+videosrc}}" class="add-image video"></video>
+</view>
+<form bindsubmit='submit' hidden='{{play==2}}'>
+  <view class='listbox'>
+    <view class='listcon'>
+      <view class='listTitle'>
+        <text wx:if='{{!Use}}' class='key'>*</text>客户名称</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Name' focus="{{focus.Name}}" value='{{Use?listData.VrCustName:Name}}' disabled='{{Use}}' placeholder='{{Use?"":"请输入客户名称"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>联系人</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Contacts' focus="{{focus.Contacts}}" value='{{Use?listData.VrContacts:Contacts}}' disabled='{{Use}}' placeholder='{{Use?"":"请输入联系人"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>联系电话</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='phonenumber' focus="{{focus.phonenumber}}" value='{{Use?listData.VrContactNumber:phonenumber}}' maxlength='11' disabled='{{Use}}' placeholder='{{Use?"":"请输入联系电话"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>拜访日期</view>
+      <view class="section">
+        <picker disabled='{{Use}}' mode="date" value="{{InnerTime}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+          <view class='picker_box'>
+            <text class="picker">{{Use?VrVisitingDate:InnerTime||'请选择日期'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>
+        <text wx:if='{{!Use}}' class='key'>*</text>Division</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="division" value="{{division}}" range="{{Division}}">
+          <view class='picker_box'>
+            <text class="picker">{{Use?listData.VrDivision:Division[division]||'请选择Divsion'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>
+        <text wx:if='{{!Use}}' class='key'>*</text>拜访类型</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="visit" value="{{visit}}" range="{{visits}}">
+          <view class='picker_box'>
+            <text class="picker">{{Use?listData.VrCategory:visits[visit]||'请选择拜访类型'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>目的</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="objective" value="{{objective}}" range="{{objectives}}">
+          <view class='picker_box'>
+            <text class="picker">{{Use?listData.VrObjective:objectives[objective]||'请选择目的'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>拜访计划</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="plan" value="{{plan}}" range="{{plans}}">
+          <view class='picker_box'>
+            <text class="picker">{{Use?listData.VrVisitPlan:plans[plan]||'请选择拜访计划'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>拜访结果</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="Result" value="{{Result}}" range="{{Results}}">
+          <view class='picker_box'>
+            <text class="picker">{{Use?listData.VrVisitingResults:Results[Result]||'请选择拜访结果'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>会谈时间</view>
+      <view class='input_box'>
+        <input class='input' maxlength='3' type="number" name='TalksTime' focus="{{focus.TalksTime}}" value='{{Use?listData.VrMeetingTime:TalksTime}}' disabled='{{Use}}' placeholder='{{Use?"":"请输入会谈时间(小时)"}}' placeholder-style="color:#000"></input>
+        <text wx:if="{{!Use}}" class='inputtext'>小时</text>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>路途时间</view>
+      <view class='input_box'>
+        <input class='input' maxlength='4' type="number" name='WayTime' focus="{{focus.WayTime}}" value='{{Use?listData.VrJourneyTime:WayTime}}' disabled='{{Use}}' placeholder='{{Use?"":"请输入路途时间(小时)"}}' placeholder-style="color:#000"></input>
+        <text wx:if="{{!Use}}" class='inputtext'>小时</text>
+      </view>
+    </view>
+    <view class='listcon' wx:if='{{play==1}}'>
+      <view class='listTitle'><text wx:if='{{!Use}}' class='key'>*</text>具体内容</view>
+      <view class='input_box'>
+        <textarea class='textarea' maxlength='100' name='content' focus="{{focus.content}}" value='{{Use?listData.VrContent:content}}' disabled='{{Use}}' placeholder='{{Use?"":"请输入具体内容"}}' placeholder-style="color:#000"></textarea>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>上传照片</view>
+      <view class="input_box">
+        <view class="justify-end">
+          <block wx:for='{{imageList}}' wx:key='*this'>
+            <view bindtap='deleteImage' data-index='{{index}}' class="add-image image-box margin-r-20">
+              <!-- <image mode="widthFix" src="/images/delete.png" class="delete-image" /> -->
+              <image mode="aspectFit" data-src='{{Images+item}}' src="{{Images+item}}" class="add-image" />
+            </view>
+          </block>
+          <image hidden='{{imageList.length >= imageMaxNum}}' wx:if='{{!Use}}' bindtap='addImage' mode="aspectFit" src="/images/addImage.png" class="add-image" />
+        </view>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>上传视频</view>
+      <view class="input_box">
+        <view class="justify-end">
+          <block wx:for='{{VideoList}}' wx:key='*this'>
+            <view data-index='{{index}}' class="add-image image-box margin-r-20">
+              <view class='active'>
+                <image bindtap='play' class='activeimg' data-src='{{item}}' src='/images/play.jpg'></image>
+              </view>
+              <!-- <image mode="widthFix" src="/images/delete.png" class="delete-image" /> -->
+            </view>
+          </block>
+          <image hidden='{{VideoList.length >= imageMaxNum}}' wx:if='{{!Use}}' bindtap='addvalue' mode="aspectFit" src="/images/addImage.png" class="add-image" />
+        </view>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>定位</view>
+      <view class='input_box flex'>
+        <input class='input' type="number" disabled='true' value='{{Use?listData.VrLocation:Location}}' laceholder-style="color:#000"></input>
+        <view bindtap='Location' wx:if='{{!Use}}' class='dingwei'>获取定位</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='headtitle'>
+      压缩机产品
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>型号</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Compressorxing' focus="{{focus.Compressorxing}}" value='{{Use?listData.VrCompressorModel:Compressorxing}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的压缩机型号"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>品牌</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Compressorpin' focus="{{focus.Compressorpin}}" value='{{Use?listData.VrCompressorBrand:Compressorpin}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的压缩机品牌"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>数量</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Compressornum' focus="{{focus.Compressornum}}" value='{{Use?listData.VrCompressorNum:Compressornum}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的压缩机型号数量"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='headtitle'>
+      附属设备
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>型号</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Accessoryxing' focus="{{focus.Accessoryxing}}" value='{{Use?listData.VrEquipmentModel:Accessoryxing}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的附属设备型号"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>品牌</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Accessorypin' focus="{{focus.Accessorypin}}" value='{{Use?listData.VrEquipmentBrand:Accessorypin}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的附属设备品牌"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>数量</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Accessorynum' focus="{{focus.Accessorynum}}" value='{{Use?listData.VrEquipmentNum:Accessorynum}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户已采购的附属设备型号数量"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='headtitle'>
+      空压机设备使用情况
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>运行时间</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Situationyun' focus="{{focus.Situationyun}}" value='{{Use?listData.VrAirCompressorUseRun:Situationyun}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写运行时间"}}' placeholder-style="color:#000"></input>
+        <text wx:if="{{!Use}}" class='inputtext'>小时</text>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>加载时间</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Situationjia' focus="{{focus.Situationjia}}" value='{{Use?listData.VrAirCompressorUseLoad:Situationjia}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写加载时间"}}' placeholder-style="color:#000"></input>
+        <text wx:if="{{!Use}}" class='inputtext'>小时</text>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>客户评价</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Situationping' focus="{{focus.Situationping}}" value='{{Use?listData.VrAirCompressorUseEvaluate:Situationping}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写客户评价"}}' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <!-- <view class='listcon'>
+    <view class='listTitle'>采购时间</view>
+    <view class='input_box'>
+      <input class='input' type="text" name='Situationcai' focus="{{focus.Situationcai}}" value='{{Use?VrAirCompressorUsePurchase:Situationcai}}' disabled='{{Use}}' placeholder='{{Use?"":"请填写设备采购时间，如：2012/1/25"}}' placeholder-style="color:#000"></input>
+    </view>
+  </view> -->
+    <view class='listcon'>
+      <view class='listTitle'>采购日期</view>
+      <view class="section">
+        <picker disabled='{{Use}}' mode="date" value="{{CompressorUsePurchase}}" start="{{start}}" end="{{end}}" bindchange="CompressorUsePurchase">
+          <view class='picker_box'>
+            <text class="picker">{{Use?VrAirCompressorUsePurchase:CompressorUsePurchase||'请选择设备采购时间'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class='bottombox'></view>
+  <button form-type='submit' wx:if='{{!Use}}' class='Submission'>提交</button>
+  <view class='Submission' wx:else bindtap='return'>返回</view>
+</form>

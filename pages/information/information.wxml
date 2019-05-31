@@ -1,0 +1,52 @@
+<!--pages/information/information.wxml-->
+  <view class='listbox'>
+    <view class='listcon'>
+      <view class='listTitle'>客户名称</view>
+      <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustName}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>客户代码</view>
+      <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustCode}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>城市</view>
+        <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustProvince+listData.CustCity}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>地址</view>
+      <view class='input_box'>
+        <input class='input'  disabled='{{Use}}' value='{{listData.CustAddress}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>区域</view>
+      <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustRegion}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>行业</view>
+      <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustIndustry}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>客户类别</view>
+       <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustCategory}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>客户类型</view>
+       <view class='input_box'>
+        <input class='input' disabled='{{Use}}' value='{{listData.CustBusinessSource}}'></input>
+      </view>
+    </view>
+  </view>
+  <button bindtap='Return' class='Submission'>返回</button>

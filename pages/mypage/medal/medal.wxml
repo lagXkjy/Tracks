@@ -1,0 +1,9 @@
+<!--pages/mypage/medal/medal.wxml-->
+<image class='back' src='/images/medal.png'></image>
+<view class='box'>
+  <!-- <view>{{listData.MeMeadlName==null?'':listData.MeMeadlName}}</view> -->
+  <view>
+    <image src='{{MedalLevel+listData.MeMeadlImg}}'></image>
+    <!-- <image src='/images/medal4.png'></image> -->
+  </view>
+</view>

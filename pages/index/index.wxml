@@ -1,0 +1,41 @@
+<!--pages/index/index.wxml-->
+<view>
+  <view class='search_box'>
+    <view class='select'>
+      <view class='title' bindtap='title'><text >{{title}}</text><image src='/images/xljiantou.png'></image></view>
+      <view class='option' wx:if='{{hover}}'>
+        <view data-name='{{item.name}}' bindtap='hover' wx:for='{{titlelist}}' wx:key='*this'>{{item.name}}</view>
+      </view>
+    </view>
+    <view>
+      <input value='{{value}}' bindinput='inputTyping' placeholder='请输入客户名称'></input>
+    </view>
+    <view class='sousuo' bindtap='search'>搜索</view>
+  </view>
+  <view class='Record_box' wx:for='{{listData}}' wx:key='{{index}}'>
+    <view class='record_con' data-suid='{{item.CustId}}' bindtap='information'>
+      <view class='business'>
+        <image src='/images/businesslist.png'></image>
+        <view>{{item.CustName}}</view>
+      </view>
+      <view class='details'>
+        <view>客户代码：
+          <text>{{item.CustCode}}</text>
+        </view>
+        <view>区域：
+          <text>{{item.CustRegion}}</text>
+        </view>
+        <view>所在省份：
+          <text>{{item.CustProvince}}</text>
+        </view>
+        <view>客户类别：
+          <text>{{item.CustCategory}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='button'>
+      <view bindtap='Record' data-id='{{item.CustId}}' data-name='{{item.CustName}}'>拜访记录({{item.NumberVisits}})</view>
+      <view data-id='{{item.CustId}}' data-name='{{item.CustName}}' bindtap='Newvisits'>新增拜访</view>
+    </view>
+  </view>
+</view>

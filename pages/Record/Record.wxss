@@ -1,0 +1,49 @@
+/* pages/Record/Record.wxss */
+.business{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.business image{
+  width: 32rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.Record_box{
+  background: #fff;
+  margin-top: 20rpx;
+}
+.record_con{
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.details{
+  padding: 35rpx 0 15rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  color: #4a4a4a;
+  font-size: 26rpx;
+}
+.details view{
+  width:50%;
+  margin-bottom: 20rpx;
+}
+.details view:nth-child(3){
+  flex: 1;
+}
+.button{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15rpx 20rpx;
+}
+.button view{
+  height: 40rpx;
+  border: 1rpx solid #014099;
+  color: #014099;
+  padding: 10rpx 15rpx;
+  margin: 0 8rpx;
+  border-radius: 5rpx;
+}

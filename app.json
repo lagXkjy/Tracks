@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/Jump/Jump",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/seevisit/seevisit",
+    "pages/added/added",
+    "pages/my/my",
+    "pages/Record/Record",
+    "pages/mypage/medal/medal",
+    "pages/mypage/ranking/ranking",
+    "pages/information/information"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序获取您的位置，用于更好的为您提供服务"
+    }
+  },
+  "tabBar": {
+    "color": "#434444",
+    "selectedColor": "#014099",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "客户拜访",
+        "iconPath": "/images/chlendar.png",
+        "selectedIconPath": "/images/chlendar1.png"
+      },
+      {
+        "pagePath": "pages/added/added",
+        "text": "新增客户",
+        "iconPath": "/images/order.png",
+        "selectedIconPath": "/images/order1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

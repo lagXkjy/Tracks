@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<image class='back' src='/images/phoneback.png'></image>
+<view class='box'>
+  <image class='logo' src='/images/phonelogo.png'></image>
+  <view class="phone-box">
+    <input bindinput="inputPhone" type="number" maxlength="11" placeholder="请输入11位手机号" placeholder-style="color:#fff"></input>
+  </view>
+  <view class='button_box'>
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交绑定</button>
+  </view>
+</view>

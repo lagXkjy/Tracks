@@ -1,0 +1,53 @@
+<!--pages/added/added.wxml-->
+<form  bindsubmit='submit'>
+  <view class='listbox'>
+    <view class='listcon'>
+      <view class='listTitle'>
+        <text class='key'>*</text>客户名称</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Name' focus="{{focus.Name}}" placeholder='请输入客户名称' placeholder-style="color:#000" value='{{Name}}'></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text class='key'>*</text>城市</view>
+      <view class="section">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class='picker_box'>
+            <text class="picker">{{region[0]+ region[1]+ region[2]||'请选择省份'}}</text>
+            <image src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text class='key'>*</text>地址</view>
+      <view class='input_box'>
+        <input class='input' type="text"  name='address' focus="{{focus.address}}" value='{{address}}' placeholder='请输入地址' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>
+        <text class='key'>*</text>行业</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="visit" value="{{visit}}" range="{{visits}}">
+          <view class='picker_box'>
+            <text class="picker">{{visits[visit]||'请选择行业'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'><text class='key'>*</text>客户类别</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="plan" value="{{plan}}" range="{{plans}}">
+          <view class='picker_box'>
+            <text class="picker">{{plans[plan]||'请选择客户类别'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <button form-type='submit' class='Submission'>提交</button>
+</form>

@@ -1,0 +1,66 @@
+/* pages/mypage/ranking/ranking.wxss */
+.listBox{
+  background: #fff;
+}
+.listTitle{
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid#f0f2f5;
+  }
+  .title{
+    width: 100%;
+    border-left: 3rpx solid #014099;
+    padding-left: 15rpx;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .myranking{
+    color: #e60013;
+    font-weight: bold;
+  }
+  .list{
+    height: 115rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    border-bottom: 1rpx solid#f0f2f5;
+  }
+  .listleft{
+    display: flex;
+    align-items: center;
+  }
+  .rankimg{
+    margin-right: 23rpx;
+    font-size: 26rpx;
+  }
+  .rankimg image{
+    width: 44rpx;
+    height: 60rpx;
+  }
+  .rankimg text{
+    display: block;
+    width: 44rpx;
+    text-align: center;
+  }
+  .headimg{
+    margin-right:20rpx;
+  }
+  .headimg image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+  }
+  .frequency{
+    font-size: 26rpx;
+  }
+  .name{
+    font-size: 30rpx;
+    color: #014099;
+    font-weight: bold;
+  }

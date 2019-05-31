@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "客户拜访",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

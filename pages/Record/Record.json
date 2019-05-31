@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "拜访记录",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

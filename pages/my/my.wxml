@@ -1,0 +1,21 @@
+<!--pages/my/my.wxml-->
+<view>
+  <view class='header'>
+    <image mode='center' src='/images/myback.png'></image>
+    <view class='header_con'>
+      <image src='{{listData.SuAvaUrl}}'></image>
+      <view class='name'>
+        <view>{{listData.SuName}}</view>
+        <view>级别：{{listData.MeMeadlName}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='listcon'>
+    <view class='list' wx:for='{{list}}' data-url='{{item.url}}' wx:key='*this' bindtap='listTap'>
+      <view>{{item.name}}</view>
+      <view>
+        <image src='/images/jiantou.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

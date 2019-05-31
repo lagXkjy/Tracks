@@ -1,0 +1,25 @@
+<!-- <wxs module="dateUtil" src="../../utils/filter.wxs"></wxs> -->
+<view class='business'>
+  <image src='/images/business.png'></image>
+  <view>{{name}}</view>
+</view>
+<view class='Record_box' wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='record_con'>
+    <view class='details'>
+      <view>拜访日期：
+        <!-- <text>{{dateUtil.dateFormat('1537578367970')}}</text> -->
+        <!-- <text>{{dateUtil.timeStamp(item.VrVisitingDate)}}</text> -->
+        <text>{{item.VisitingDate}}</text>
+      </view>
+      <view>拜访类型：
+        <text>{{item.VrCategory}}</text>
+      </view>
+      <view>拜访计划：
+        <text>{{item.VrVisitPlan}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='button'>
+    <view bindtap='see' data-id='{{item.VrId}}'>查看详情</view>
+  </view>
+</view>

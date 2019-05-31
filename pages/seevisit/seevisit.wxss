@@ -1,0 +1,153 @@
+.key {
+  color: #fb2424;
+}
+
+.bottombox {
+  height: 90rpx;
+}
+
+.listcon {
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 35rpx 30rpx;
+  background: #fff;
+  display: flex;
+  /* align-items: center; */
+}
+
+.listTitle {
+  color: #9f9f9f;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+  width: 125rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.input_box {
+  flex: 1;
+  position: relative;
+}
+
+.inputtext {
+  position: absolute;
+  right: 30rpx;
+  bottom: 10rpx;
+}
+
+.section {
+  height: 50rpx;
+  line-height: 50rpx;
+  flex: 1;
+}
+
+.picker_box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section image {
+  width: 15rpx;
+  height: 26rpx;
+}
+
+.textarea {
+  padding-top: 15rpx;
+  width: auto;
+}
+
+.add-image {
+  width: 76rpx;
+  height: 76rpx;
+  position: relative;
+  margin-right:5rpx;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dingwei {
+  height: 40rpx;
+  border: 1rpx solid #014099;
+  color: #014099;
+  padding: 8rpx 15rpx;
+  margin: 0 8rpx;
+  border-radius: 5rpx;
+}
+
+.video {
+  width: 100%;
+  height: 93%;
+  margin-top: 60rpx;
+}
+
+.Submission {
+  width: 100%;
+  height: 90rpx;
+  background: #014099;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+}
+
+.headtitle {
+  height: 80rpx;
+  background: #e8e8e8;
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+}
+
+.Mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.delvideo {
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  background: #000;
+}
+
+.end {
+  position: absolute;
+  font-size: 50rpx;
+  color: #fff;
+  font-weight: bold;
+  left: 50rpx;
+  z-index: 100;
+}
+
+.active {
+  width: 100%;
+  height: 100%;
+}
+
+.activeimg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,47 @@
+/* pages/login/login.wxss */
+
+page {
+  background: #014099;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 100%;
+  padding: 125rpx 0;
+}
+
+.logo {
+  width: 440rpx;
+  height: 193rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.phone-box {
+  width: 85%;
+  margin: 0rpx auto;
+  margin-top: 140rpx;
+  border-bottom: 1px solid #afafaf;
+  color: #fff;
+}
+.phone-box input{
+  height: 65rpx;
+  font-size: 30rpx;
+}
+.button_box button{
+  width: 85%;
+  height: 81rpx;
+  font-size: 37rpx;
+  background: #dd2025;
+  border-radius: 50rpx;
+  color: #fff;
+  margin-top: 70rpx;
+  line-height:81rpx;
+}

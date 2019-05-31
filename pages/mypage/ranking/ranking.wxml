@@ -1,0 +1,28 @@
+<!--pages/mypage/ranking/ranking.wxml-->
+<view class='listBox'>
+    <view class='listTitle'>
+      <view class='title'>
+        <view>
+          <text>我的排名：第<text class='myranking'>{{NowUserRanking.Ranking}}</text>名</text>
+        </view>
+        <view class='frequency'>{{NowUserRanking.NumberVisits}}次</view>
+      </view>
+    </view>
+    <view class='listCon'>
+      <view class='list' wx:for='{{listData}}' wx:key='*this'>
+        <view class='listleft'>
+          <view class='rankimg'>
+            <image wx:if='{{index<3}}' src='/images/medal{{index}}.png'></image>
+            <text wx:else>{{item.Ranking}}</text>
+          </view>
+          <view class='headimg'>
+            <image src='{{item.SuAvaUrl}}'></image>
+          </view>
+          <view class='name' >
+            {{item.SuName}}
+          </view>
+        </view>
+        <view class='frequency'>{{item.NumberVisits}}次</view>
+      </view>
+    </view>
+</view>
